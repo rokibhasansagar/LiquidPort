@@ -27,6 +27,6 @@ jobs:
         # Destination branch to push changes
         # branch: # optional, default is master
         # Determines if force push is used
-        # force: # optional
+        force: yes
         # Directory to change to before pushing.
         directory: .
