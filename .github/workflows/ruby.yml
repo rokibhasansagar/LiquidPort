@@ -8,18 +8,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
     - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+      uses: actions/setup-ruby@master
       with:
         ruby-version: 2.6.x
     - name: Build and Update
       run: |
         gem install bundler
-        bundle install --jobs 4 --retry 3
+        bundle install --jobs 16 --retry 3
         bundle update
+    - name: Commit files
+      run: |
+        git config --local user.email ${{ secrets.GitMail }}
+        git config --local user.name ${{ secrets.GitUser }}
+        git commit -m "Add changes by Actions!" -a
     - name: GitHub Push
-      uses: ad-m/github-push-action@v0.5.0
+      uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GitOAUTHToken }}
         # Repository name to push. Default or empty value represents current github repository (${GITHUB_REPOSITORY})
