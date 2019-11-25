@@ -7,5 +7,5 @@ gem "therubyracer", "0.12.3"
 
 group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.11"
-   gem "github-pages", "~> 200"
+   gem "github-pages", "~> 202"
 end
