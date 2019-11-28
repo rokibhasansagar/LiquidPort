@@ -1,6 +1,6 @@
 name: Ruby
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   build:
@@ -27,10 +27,10 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GitOAUTHToken }}
-        # Repository name to push. Default or empty value represents current github repository (${GITHUB_REPOSITORY})
-        # repository: # optional, default is 
+        # Repository name to push. Default or empty value represents current github repository
+        # repository: # optional, default is (${GITHUB_REPOSITORY})
         # Destination branch to push changes
-        # branch: # optional, default is master
+        branch: master # optional, default is master
         # Determines if force push is used
         force: yes
         # Directory to change to before pushing.
