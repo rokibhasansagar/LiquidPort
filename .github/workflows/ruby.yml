@@ -1,10 +1,10 @@
 name: DependaBot Update Check via Ruby
 
 on:
-  pull_request:
-    types: [labeled, opened, reopened]
-    branches:
-      - dependabot/**
+  pull_request: {}
+    paths:
+      - Gemfile
+      - Gemfile.lock
 
 jobs:
 
@@ -22,6 +22,7 @@ jobs:
         gem install bundler
         bundle install --jobs 16 --retry 3
         bundle update
+        git diff Gemfile*
 
   auto-merge:
     runs-on: ubuntu-latest
