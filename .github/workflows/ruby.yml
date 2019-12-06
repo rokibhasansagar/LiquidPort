@@ -1,7 +1,7 @@
 name: DependaBot Update Check via Ruby
 
 on:
-  pull_request: {}
+  pull_request:
     paths:
       - Gemfile
       - Gemfile.lock
