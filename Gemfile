@@ -6,6 +6,6 @@ gem "therubyracer", "0.12.3"
 
 
 group :jekyll_plugins do
-   gem "jekyll-feed", "~> 0.13"
-   gem "github-pages", "~> 207"
+   gem "jekyll-feed", "~> 0.15"
+   gem "github-pages", "~> 208"
 end
